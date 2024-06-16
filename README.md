@@ -43,3 +43,7 @@
 |<br/><br/>| **expUnderline** | Print out text with UNDERLINE format
 |<br/><br/>| **expItalic** | Print out text with ITALIC format
 |<br/><br/>| **expStyle** | Print out list of supported colors
+
+### About me:
+- Email: nguyenbku97@gmail.com 
+- Leave me a star :dizzy: if it helps 
