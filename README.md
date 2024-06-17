@@ -17,33 +17,48 @@
     ```
 - Navigate to *mlog* folder:
     ```
-    cd mlog/
-    pip install -e .
+    cd ModifyLog/
+    pip install mlog
     ```
-- Run test file:
+- Check if mlog is installed properly, ```[22:28:04] - [INFO] : 0.1.1```
     ```
-    python3 test_mlog.py
+    python3 -c "import mlog; mlog.expInfo(mlog.__version__)"
     ```
-- Result should be like image below:  
+### Usage
+- Run test logger:
+    ```
+    cd scripts/
+    python3 test_logger.py
+    ```
 
-    ![alt text](images/test_mlog.png "test-mlog")
+    ![alt text](images/logger.png "test-logger")
+- Run test inputer:
+    ```
+    cd scripts/
+    python3 test_inputer.py
+    ```
+
+    ![alt text](images/inputer.png "test-inputer")
 
 ### Current Supported Methods
 
-| Category 	| Method | Description 
-|---	|---	|---
-|**Level**| <br/> | <br/> 
-|<br/><br/>| **expInfo** | Print out text with INFO signal, green color
-|<br/><br/>| **expWarn** | Print out text with WARN signal, yellow color
-|<br/><br/>| **expError** | Print out text with ERROR signal, red color
-|<br/><br/>| **expDebug** | Print out text with DEBUG signal, cyan color
-|<br/><br/>| **expColor** | Print out text with designated color, default is white
-|**Style**| <br/> | <br/> 
-|<br/><br/>| **expBold** | Print out text with BOLD format
-|<br/><br/>| **expUnderline** | Print out text with UNDERLINE format
-|<br/><br/>| **expItalic** | Print out text with ITALIC format
-|<br/><br/>| **expStyle** | Print out list of supported colors
+Main | Category 	| Method | Description 
+|--- |---	|---	|---
+|**Logger**|**Level**| <br/> | <br/> 
+|<br/><br/>|<br/><br/>| **expInfo** | Print out text with INFO signal, green color
+|<br/><br/>|<br/><br/>| **expWarn** | Print out text with WARN signal, yellow color
+|<br/><br/>|<br/><br/>| **expError** | Print out text with ERROR signal, red color
+|<br/><br/>|<br/><br/>| **expDebug** | Print out text with DEBUG signal, cyan color
+|<br/><br/>|<br/><br/>| **expColor** | Print out text with designated color, default is white
+|<br/><br/>|**Style**| <br/> | <br/> 
+|<br/><br/>|<br/><br/>| **expBold** | Print out text with BOLD format
+|<br/><br/>|<br/><br/>| **expUnderline** | Print out text with UNDERLINE format
+|<br/><br/>|<br/><br/>| **expItalic** | Print out text with ITALIC format
+|<br/><br/>|<br/><br/>| **expStyle** | Print out list of supported colors
+|**Inputer**|<br/><br/>| <br/> | <br/> 
+|<br/><br/>|<br/><br/>| **inputCondition** | Input from console with specific condition 
 
+Now you can import everywhere in your project!
 ### About me:
 - Email: nguyenbku97@gmail.com 
 - Leave me a star :dizzy: if it helps 
