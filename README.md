@@ -9,7 +9,7 @@
 ### Installation
 - Assume you're at ```project``` folder, open terminal
     ```
-    git clone ...
+    git@github.com:NU-iz-da-fam/Modified-Logging.git
     ```
 - (OPTIONAL) Create a virtual environment named *.modlog* or your project name
     ```

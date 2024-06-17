@@ -1,6 +1,6 @@
-import os
-import logging
-import mlog
+# import sys
+# sys.path.append("../")
+import modlog as mlog
 
 if __name__ == "__main__":
     # Default white color

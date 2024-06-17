@@ -11,7 +11,8 @@ setup(
     name='mlog',
     version=version['__version__'],
     author='Chau Thai Nguyen',
-    maintainer='Chau Thai Nguyen | nguyenbku97@gmail.com',
+    author_email= 'nguyenbku97@gmail.com',
+    maintainer='Chau Thai Nguyen',
     packages= find_packages(include=['modlog']),
     install_requires=['pyyaml',]
 )
