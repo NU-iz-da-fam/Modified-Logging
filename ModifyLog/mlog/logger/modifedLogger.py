@@ -1,13 +1,12 @@
 import time
-import json
-
 # Maintainer: nguyenbku97@gmail.com
 
 # logging level
 INFO        = 1
 WARN        = 2
 ERROR       = 3
-DEBUG         = 4
+DEBUG       = 4
+NORM        = 5
 
 # colors mapping
 _colorMapping = {
@@ -38,6 +37,7 @@ _levelMapping = {
     WARN        : '[WARN] ',
     ERROR       : '[ERROR]',
     DEBUG       : '[DEBUG]',
+    NORM        : ''
 }
 _formatReset = "\u001b[0m"
 
@@ -45,9 +45,9 @@ def _timeonly() -> str:
     ''' Wrapper on ascitime, to get only time. '''
     return time.asctime().split()[3]
 
-def expStrColor(text: str= "", color: str= "red"):
+def expStrColor(text: str= "", color: str= "red", level: int = NORM):
     ''' Export string with designated color '''
-    msg = f"{_colorMapping[color]}{text}{_formatReset}"
+    msg = f"{_colorMapping[color]}{_levelMapping[level]}{text}{_formatReset}"
     return msg
 
 # Logging Level Methods
@@ -71,9 +71,9 @@ def expDebug(text: str= ""):
     msg = f"{_colorMapping['cyan']}[{_timeonly()}] - {_levelMapping[DEBUG]}: {text}{_formatReset}"
     print(msg)
 
-def expColor(text: str= "", color: str= "white"):
+def expColor(text: str= "", color: str= "white", level: int = NORM):
     ''' Print out text with designated color, default is white '''
-    msg = expStrColor(text=text, color=color)
+    msg = expStrColor(text=text, color=color, level=level)
     print(msg)
 
 # Styling Methods
@@ -95,11 +95,27 @@ def expItalic(text: str= ""):
     return expStyle(text, format=ITALIC)
 
 # Helper Methods
-def getColor():
+def getColorName():
     ''' Print out list of supported colors '''
     lst_color = list()
     for color in _colorMapping:
         lst_color.append(color)
     
-    expColor(lst_color, color="purple")
+    expColor(lst_color, color='white', level= INFO)
+
+def getFormatName():
+    ''' Print out list of supported styling format '''
+    lst_format = list()
+    for styling in _stylingMapping:
+        lst_format.append(styling)
+    
+    expColor(lst_format, color='white', level= INFO)
+
+def getLevelName():
+    ''' Print out list of supported LEVEL '''
+    lst_level = list()
+    for level in _levelMapping:
+        lst_level.append(level)
+
+    expColor(lst_level, color='white', level= INFO)
 

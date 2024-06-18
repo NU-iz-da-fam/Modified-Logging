@@ -1,8 +1,6 @@
-import os
 import mlog
 from typing import List, Union
 # Maintainer: nguyenbku97@gmail.com
-
 
 def inputCondition(msg: str = "", accept = Union[List[str], str], retry: int = 5):
     ''' 
@@ -11,10 +9,10 @@ def inputCondition(msg: str = "", accept = Union[List[str], str], retry: int = 5
         @param accept: inputs that are ok
         @param retry: number of retry 
     '''
-    msg = mlog.expStrColor(msg, color= 'green')
+    msg = mlog.expStrColor(f"{msg}: ( accept: {accept} )", color= 'green', level= mlog.INFO)
     count = 0
     while True:
-        answer = input("{}: ".format(msg)).lower()
+        answer = input(f"{msg}: ").lower()
         condition = False
         try:
             condition =  bool(answer in accept)

@@ -6,6 +6,9 @@ if __name__ == "__main__":
     # Default white color
     mlog.expColor("Test modify logging library")
     
+    #  Explicit string with color and level
+    mlog.expStrColor("Hello World!", color= 'blue', level= mlog.ERROR)
+
     # Info level
     mlog.expInfo("Hello World!")
 
@@ -34,4 +37,4 @@ if __name__ == "__main__":
     mlog.expUnderline("Underline Hello World!")
 
     # Get color list
-    mlog.getColor()
+    mlog.getColorName()
