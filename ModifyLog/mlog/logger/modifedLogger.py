@@ -2,11 +2,12 @@ import time
 # Maintainer: nguyenbku97@gmail.com
 
 # logging level
-INFO        = 1
-WARN        = 2
-ERROR       = 3
-DEBUG       = 4
+DEBUG       = 1
+INFO        = 2
+WARN        = 3
+ERROR       = 4
 NORM        = 5
+PRIORITY    = DEBUG # Initial value
 
 # colors mapping
 _colorMapping = {
@@ -50,26 +51,44 @@ def expStrColor(text: str= "", color: str= "red", level: int = NORM):
     msg = f"{_colorMapping[color]}{_levelMapping[level]}{text}{_formatReset}"
     return msg
 
+# Management Methods
+def setLevel(designated_level: int = DEBUG):
+    ''' Set exp level to use through class '''
+    global PRIORITY 
+    PRIORITY = designated_level
+
+def _checkLevel(input_level: int = DEBUG) -> bool: 
+    ''' Check whether message should be printed out '''
+    print_out = True
+    if input_level < PRIORITY:
+        print_out = False
+    
+    return print_out
+
 # Logging Level Methods
 def expInfo(text: str= ""):
     ''' Print out text with INFO signal, green color '''
-    msg = f"{_colorMapping['green']}[{_timeonly()}] - {_levelMapping[INFO]}: {text}{_formatReset}"
-    print(msg)
+    if _checkLevel(INFO):
+        msg = f"{_colorMapping['green']}[{_timeonly()}] - {_levelMapping[INFO]}: {text}{_formatReset}"
+        print(msg)
 
 def expWarn(text: str= ""):
     ''' Print out text with WARN signal, yellow color '''
-    msg = f"{_colorMapping['yellow']}[{_timeonly()}] - {_levelMapping[WARN]}: {text}{_formatReset}"
-    print(msg)
+    if _checkLevel(WARN):
+        msg = f"{_colorMapping['yellow']}[{_timeonly()}] - {_levelMapping[WARN]}: {text}{_formatReset}"
+        print(msg)
 
 def expError(text: str= ""):
     ''' Print out text with ERROR signal, red color '''
-    msg = f"{_colorMapping['red']}[{_timeonly()}] - {_levelMapping[ERROR]}: {text}{_formatReset}"
-    print(msg)
+    if _checkLevel(ERROR):
+        msg = f"{_colorMapping['red']}[{_timeonly()}] - {_levelMapping[ERROR]}: {text}{_formatReset}"
+        print(msg)
 
 def expDebug(text: str= ""):
     ''' Print out text with DEBUG signal, cyan color '''
-    msg = f"{_colorMapping['cyan']}[{_timeonly()}] - {_levelMapping[DEBUG]}: {text}{_formatReset}"
-    print(msg)
+    if _checkLevel(DEBUG):
+        msg = f"{_colorMapping['cyan']}[{_timeonly()}] - {_levelMapping[DEBUG]}: {text}{_formatReset}"
+        print(msg)
 
 def expColor(text: str= "", color: str= "white", level: int = NORM):
     ''' Print out text with designated color, default is white '''

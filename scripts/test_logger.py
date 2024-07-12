@@ -38,3 +38,16 @@ if __name__ == "__main__":
 
     # Get color list
     mlog.getColorName()
+
+    # Set level 
+    mlog.setLevel(designated_level= mlog.DEBUG)
+    mlog.expDebug("Debug Level printout")
+    mlog.expInfo("Info Level printout")
+    mlog.expWarn("Warn Level printout")
+    mlog.expError("Error Level printout")
+
+    mlog.setLevel(designated_level= mlog.INFO)
+    mlog.expDebug("Debug Level printout")
+    mlog.expInfo("Info Level printout")
+    mlog.expWarn("Warn Level printout")
+    mlog.expError("Error Level printout")

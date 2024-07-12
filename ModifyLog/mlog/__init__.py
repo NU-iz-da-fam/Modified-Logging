@@ -1,6 +1,8 @@
 from .logger.modifedLogger import expInfo, expWarn, expError, expDebug, expColor, expStrColor
 from .logger.modifedLogger import getColorName, getFormatName, getLevelName
 from .logger.modifedLogger import expStyle, expBold, expUnderline, expItalic
+from .logger.modifedLogger import setLevel
+
 from .logger.modifedLogger import INFO, WARN, DEBUG, ERROR, BOLD, ITALIC, UNDERLINE
 
 
