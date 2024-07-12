@@ -18,7 +18,7 @@
 - Navigate to *mlog* folder:
     ```
     cd ModifyLog/
-    pip install mlog
+    pip install -e .
     ```
 - Check if mlog is installed properly, ```[22:28:04] - [INFO] : 0.1.1```
     ```
