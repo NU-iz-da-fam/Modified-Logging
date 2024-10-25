@@ -5,7 +5,7 @@
 - Print out messeage with specific purpose as INFO, DEBUG, ERROR, BUG for easy project management
 - Print out messeage with specific styling format as BOLD, ITALIC, UNDERLINE
 - Support printing out message with time.
-
+- Support setting Level. Only designated level could be print out.
 ### Installation
 - Assume you're at ```project``` folder, open terminal
     ```
@@ -20,11 +20,12 @@
     cd ModifyLog/
     pip install -e .
     ```
-- Check if mlog is installed properly, ```[22:28:04] - [INFO] : 0.1.1```
+- Check if mlog is installed properly, ```[11:22:32] - [INFO] : 0.1.2```
     ```
     python3 -c "import mlog; mlog.expInfo(mlog.__version__)"
     ```
 ### Usage
+- For reference, please read ```test_logger.py``` script for detail.
 - Run test logger:
     ```
     cd scripts/
@@ -42,6 +43,7 @@
 
 ### Current Supported Methods
 
+**Inputer and Logger**
 Main | Category 	| Method | Description 
 |--- |---	|---	|---
 |**Logger**|**Level**| <br/> | <br/> 
@@ -58,7 +60,14 @@ Main | Category 	| Method | Description
 |**Inputer**|<br/><br/>| <br/> | <br/> 
 |<br/><br/>|<br/><br/>| **inputCondition** | Input from console with specific condition 
 
-Now you can import everywhere in your project!
+**Inputer and Logger**
+DEBUG = 1 | INFO = 2  	| WARN = 3 | ERROR = 4 
+|--- |---	|---	|---
+- If logging level is DEBUG, all messages from DEBUG level will be printed out
+- If logging level is INFO, all messages from INFO level will be printed out, except DEBUG
+
+**Now you can import everywhere in your project!**
+
 ### About me:
 - Email: nguyenbku97@gmail.com 
 - Leave me a star :dizzy: if it helps 
